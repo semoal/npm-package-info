@@ -14,6 +14,7 @@ defmodule NpmPackageInfo.MixProject do
     [
       app: :npm_package_info,
       version: "0.1.0",
+      description: "Fetches npm package information",
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
