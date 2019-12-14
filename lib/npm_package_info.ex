@@ -1,9 +1,9 @@
 defmodule NpmPackageInfo do
   @moduledoc """
-  Documentation for NpmPackageInfo.
-  Fetches the package information from a npm package.
-  Highly inspired in https://github.com/jesseditson/npm-package written in JavaScript.
-"""
+    Documentation for NpmPackageInfo.
+    Fetches the package information from a npm package.
+    Highly inspired in https://github.com/jesseditson/npm-package written in JavaScript.
+  """
 
   @doc """
   Given a package name recovers all his npm information
@@ -76,7 +76,7 @@ defmodule NpmPackageInfo do
   def parse_package(name, opts \\ %{}) do
     url = Path.join("https://registry.npmjs.org", name)
     {:ok, %Tesla.Env{:body => body}} = Tesla.get(url, headers: add_auth(opts))
-    {:ok, body |> Jason.decode!}
+    {:ok, body |> Jason.decode!()}
   end
 
   defp add_auth(opts) do
@@ -85,5 +85,4 @@ defmodule NpmPackageInfo do
       _ -> []
     end
   end
-
 end

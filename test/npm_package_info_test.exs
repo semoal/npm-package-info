@@ -19,12 +19,13 @@ defmodule NpmPackageInfoTest do
   end
 
   defp check_dependency(name, bearer \\ "") do
-    {:ok, package_info} = NpmPackageInfo.parse_package(
-      name,
-      %{bearer: bearer}
-    )
-    assert package_info["_id"]  == name
-    assert package_info["name"]  == name
-  end
+    {:ok, package_info} =
+      NpmPackageInfo.parse_package(
+        name,
+        %{bearer: bearer}
+      )
 
+    assert package_info["_id"] == name
+    assert package_info["name"] == name
+  end
 end
