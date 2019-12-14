@@ -56,4 +56,6 @@ jobs:
           mix deps.compile
 
       - name: Run tests
+        env:
+          TEST_NPM_TOKEN: ${{ secrets.TEST_NPM_TOKEN }}
         run: mix test --trace
